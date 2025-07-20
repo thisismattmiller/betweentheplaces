@@ -160,7 +160,7 @@ app.get("/cutmap", (request, response) => {
   }
   console.log("Setting zoomLvl to",zoomLvl)
   
-  let url = `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${geojsonEncoded}/${centerLat},${centerLon},${zoomLvl},0/1280x1280@2x?access_token=${process.env["MAPBOX_KEY"]}&attribution=false&logo=false`
+  let url = `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${geojsonEncoded}/${centerLat},${centerLon},${zoomLvl},0/1280x1280@2x?access_token=${process.env["BETWEENTHEPLACES_MAPBOX_KEY"]}&attribution=false&logo=false`
   console.log(url)
   if (request.query.download){
     response.type("application/octet-stream");

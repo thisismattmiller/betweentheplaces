@@ -1,0 +1,133 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BETWEEN THE PLACES</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BETWEEN THE PLACES">
+
+
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/bulma.min.css">
+
+    
+    <link rel="stylesheet" href="/style.css">
+    
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css">
+    
+    
+    
+
+
+    
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+    <style>
+      @media screen and (min-width: 640px){
+        .mapboxgl-ctrl-geocoder {
+            width: 66.3333% !important;
+            font-size: 15px;
+            line-height: 20px;
+            max-width: 640px!important;
+        }
+      }
+
+    </style>
+    
+    
+    
+  </head>
+  <body>
+
+
+
+
+    
+    <h1>
+      Between the Places
+    </h1>
+    
+    
+<div id="map" style="display:none"></div>
+    
+<div class="container">
+  <h2>
+    Step 1. </h2>
+    <p>
+      Enter three or more places you have lived in a city: adresss, landmarks or cross streets work.
+    </p>
+  <div id="geocoder" class="geocoder"></div>  
+</div>
+
+<div class="container" style="margin-top:2em;padding-left:2em">
+      <ol id="points">
+      </ol>  
+    
+  
+
+</div>
+<div class="container">
+
+    <button class="button is-dark" id="cutmap">✂️ Cut Map</button>
+</div>
+
+
+<div class="container" style="margin-top:4em; display:none;"  id="results-container">
+
+  <button class="button is-light" id="download">⬇️&nbsp;&nbsp;Download</button>
+
+
+  <button class="button is-light" style="float:right" id="zoomin">🔎&nbsp;&nbsp;Zoom In</button>
+  <button class="button is-light" style="float:right" id="zoomout">🔎&nbsp;&nbsp;Zoom Out</button>
+
+
+  <div id="image-container" style="background-color:white;">
+  </div>
+  <h2 id="building-image" style="background-color:#f5f5f5; padding:1em;" >Building Image...</h2>
+                                                           
+                                                           
+
+</div>
+    
+    
+<div class="container">
+  <h2>
+    About </h2>
+    <p>
+      
+      
+      <img style="float:left; margin-right:1em; " src="https://cdn.glitch.com/50ea59f0-bea6-4bfe-b345-e9611920b3f5%2Fsol_places.jpeg?v=1608681381427"> 
+      <a href="https://en.wikipedia.org/wiki/Sol_LeWitt">Sol LeWitt</a> did a series of maps where he cut out a section of it based on various criteria. The image to the left is his <em>The Area of Manhattan Between The Places Where I Have Lived Is Removed</em>, 1980. The area between the places he had lived in NYC were cut out, leaving an absence in the map. This tool lets you create your own cut up map, enter at least three locations and the map will be generated. A unique map reflecting your relationship to a city. Works best for larger metropolitan areas but it tries its best to scale the map.
+
+  </p>
+  <p>Made with Mapbox Static Image API</p>
+  <p>
+    By <a href="https://thisismattmiller.com">Matt Miller</a>
+  </p>
+</div>
+    
+    
+    
+  <canvas id="canvas"></canvas>  
+    
+    
+    
+    
+    <script src="/script.js"></script>
+
+    
+    
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:2em;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js" defer></script>
+  </body>
+</html>
